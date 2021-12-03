@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="wrap">
+
+        <div id="main" class="main">
+            <form id="content" class="content before_content active" action="{{ url_for('twitter') }}" method="POST">
+                <input type="submit" id="btn_1" class="btn_1" name="sitename" value="tweet"></input>
+            </form>
+
+            <form id="content" class="content before_content active" action="{{ url_for('movie') }}" method="POST">
+                <input type="submit" id="btn_2" class="btn_2" name="sitename" value="movie"></input>
+            </form>
+
+            <form id="content" class="content before_content active" action="{{ url_for('ja_to_en') }}" method="POST">
+                <input type="submit" id="btn_3" class="btn_3" name="sitename" value="ja_to_en"></input>
+            </form>
+        </div>
+    </div>
+{% endblock %}
