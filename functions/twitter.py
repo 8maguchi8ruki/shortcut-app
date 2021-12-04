@@ -1,4 +1,4 @@
-def post_tweet():
+def post_tweet(form_value):
     import pyautogui as pg
     import webbrowser as web
     import time
@@ -7,13 +7,12 @@ def post_tweet():
 
 
     # 値取得
-    text_value = request.form.get("text")
-    print(text_value)
+    print(form_value)
 
     # 投稿
     web.open("https://twitter.com/compose/tweet")
     time.sleep(3)
-    pyperclip.copy(text_value)
+    pyperclip.copy(form_value)
     pg.hotkey("ctrl", "v")
     time.sleep(1)
     pg.hotkey("ctrl","enter")

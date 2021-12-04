@@ -1,4 +1,4 @@
-def ja_to_en():
+def ja_to_en(form_value):
 
     from  selenium import webdriver
     import time
@@ -13,8 +13,8 @@ def ja_to_en():
 
     time.sleep(1)
 
-    text_value = request.form.get("text")
-    print(text_value)
+    print(form_value)
+
     search_box = driver.find_element_by_class_name("lmt__language_select__opener") 
     search_box.click()
     search_box = driver.find_element_by_xpath("/html/body/div[3]/div[1]/div[3]/div[3]/div[1]/div[2]/div[4]/div/div[3]/button[7]")   
@@ -30,6 +30,6 @@ def ja_to_en():
     search_box = driver.find_element_by_xpath("/html/body/div[3]/div[1]/div[3]/div[3]/div[1]/div[2]/div[2]/textarea")
     search_box.click()
 
-    search_box.send_keys(text_value)
+    search_box.send_keys(form_value)
 
     time.sleep(100)

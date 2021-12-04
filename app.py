@@ -1,7 +1,7 @@
 from flask import Flask
 from flask import render_template
 from flask import request
-from functions import tweet ,JA_to_EN
+from functions import twitter ,JA_to_EN
 
 app = Flask(__name__)
 
@@ -9,10 +9,10 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-@app.route("/twitter",methods=["GET","POST"])
-def twitter():
+@app.route("/tweet",methods=["GET","POST"])
+def tweet():
     sitename = request.form.get("sitename")
-    return render_template("twitter.html",sitename=sitename)
+    return render_template("tweet.html",sitename=sitename)
 
 
 @app.route("/movie",methods=["GET","POST"])
@@ -28,9 +28,12 @@ def ja_to_en():
 @app.route("/result",methods=["GET","POST"])
 def result():
     # tweet.py呼び出し
-    JA_to_EN.ja_to_en()
-    sitename = request.form.get("sitename")
-    return render_template("result.html",sitename=sitename)
+    form_value = request.form.get("text")
+    if(form_value == "tweet"):
+        twitter.post_tweet(form_value)
+    elif(form_value == "ja_to_en"):
+        JA_to_EN.ja_to_en(form_value)
+    return render_template("result.html")
 
 
 
