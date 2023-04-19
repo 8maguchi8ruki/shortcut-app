@@ -1,7 +1,7 @@
 # Seleniumを使ったショートカットアプリ
 
+<img width="500" alt="スクリーンショット 2023-04-19 21 58 27" src="https://user-images.githubusercontent.com/77283970/233082105-91745965-5463-4bb6-ab69-a86444d17a60.png">
 
-<img width="500px" alt="スクリーンショット 2023-04-19 21 55 53" src="https://user-images.githubusercontent.com/77283970/233081619-d9aad2d6-44fa-4f15-bf0e-7f544d3a00e8.png">
 
 私が大学二年生の時に学校の授業で制作したものです。
 数人のグループで開発しました。
